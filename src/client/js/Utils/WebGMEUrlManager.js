@@ -21,7 +21,7 @@ define([
 
     parseInitialThingsToDoFromUrl = function () {
         return {
-            layoutToLoad: util.getURLParameterByName('layout') || 'DefaultLayout',
+            layoutToLoad: util.getURLParameterByName('layout') || WebGMEGlobal.gmeConfig.layout,
             commitToLoad: util.getURLParameterByName('commit').toLowerCase(),
             projectToLoad: util.getURLParameterByName('project'),
             objectToLoad: util.getURLParameterByName('node').toLowerCase() || CONSTANTS.PROJECT_ROOT_ID,

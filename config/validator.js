@@ -217,6 +217,10 @@ function validateConfig(configOrFileName) {
     assertArray('config.visualization.decoratorPaths', config.visualization.decoratorPaths);
     assertArray('config.visualization.visualizerDescriptors', config.visualization.visualizerDescriptors);
 
+    //layout
+    expectedKeys.push('layout');
+    assertString('config.layout', config.layout);
+
     if (Object.keys(config).length !== expectedKeys.length) {
         errMsg = 'Configuration had unexpected key(s):';
         for (key in config) {
