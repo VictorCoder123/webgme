@@ -21,7 +21,8 @@ define(['js/logger', 'js/Loader/LoaderCircles'], function (Logger, LoaderCircles
     };
 
     LayoutManager.prototype.loadLayout = function (layout, fnCallback) {
-        var self = this;
+        var self = this,
+            layoutPath = ['layout', layout, layout, layout].join('/');
 
         this._logger.debug('LayoutManager loadLayout...');
 
@@ -41,7 +42,7 @@ define(['js/logger', 'js/Loader/LoaderCircles'], function (Logger, LoaderCircles
         //load new one
         this._logger.debug('Downloading layout "' + layout + '"...');
 
-        require([layout],
+        require([layoutPath],
             function (Layout) {
                 if (Layout) {
                     self._logger.debug('Layout "' + layout + '" has been downloaded...');
